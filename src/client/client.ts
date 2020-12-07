@@ -14,10 +14,15 @@ controls.addEventListener('change', render)
 
 
 const geometry: THREE.BoxGeometry = new THREE.BoxGeometry()
-const material: THREE.MeshBasicMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true })
+const material: THREE.MeshNormalMaterial = new THREE.MeshNormalMaterial({}) //color: 0x00ff00, wireframe: false})// true })
 
 const cube: THREE.Mesh = new THREE.Mesh(geometry, material)
 scene.add(cube)
+
+// const geometry2: THREE.ConeBufferGeometry = new THREE.ConeBufferGeometry()
+// const material2: THREE.MeshBasicMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: false})
+// const cone: THREE.Mesh = new THREE.Mesh(geometry2, material2)
+// scene.add(cone)
 
 camera.position.z = 2
 
