@@ -11,6 +11,7 @@ const geometry = new THREE.BoxGeometry();
 const material = new THREE.MeshNormalMaterial({}); //color: 0x00ff00, wireframe: false})// true })
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
+//test
 // const geometry2: THREE.ConeBufferGeometry = new THREE.ConeBufferGeometry()
 // const material2: THREE.MeshBasicMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: false})
 // const cone: THREE.Mesh = new THREE.Mesh(geometry2, material2)
