@@ -1,13 +1,16 @@
 import * as THREE from '/build/three.module.js'
 import { OrbitControls } from '/jsm/controls/OrbitControls'
 
+
 const scene: THREE.Scene = new THREE.Scene()
 
-const camera: THREE.PerspectiveCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+const camera: THREE.PerspectiveCamera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000)
 
 const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer()
 renderer.setSize(window.innerWidth, window.innerHeight)
 document.body.appendChild(renderer.domElement)
+
+camera.position.z = 2
 
 const controls = new OrbitControls(camera, renderer.domElement)
 controls.addEventListener('change', render)
@@ -18,13 +21,21 @@ const material: THREE.MeshNormalMaterial = new THREE.MeshNormalMaterial({}) //co
 
 const cube: THREE.Mesh = new THREE.Mesh(geometry, material)
 scene.add(cube)
-//test
-// const geometry2: THREE.ConeBufferGeometry = new THREE.ConeBufferGeometry()
-// const material2: THREE.MeshBasicMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: false})
-// const cone: THREE.Mesh = new THREE.Mesh(geometry2, material2)
+
+// const geometry: THREE.DodecahedronGeometry = new THREE.DodecahedronGeometry(1, 5)
+// const material: THREE.MeshBasicMaterial = new THREE.MeshBasicMaterial({})
+
+// const dodecahedron: THREE.Mesh = new THREE.Mesh(geometry, material)
+// scene.add(dodecahedron)
+
+
+// const geometry: THREE.ConeBufferGeometry = new THREE.ConeBufferGeometry()
+// const material: THREE.MeshBasicMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00, wireframe:  true })
+
+// const cone: THREE.Mesh = new THREE.Mesh(geometry, material)
 // scene.add(cone)
 
-camera.position.z = 2
+
 
 window.addEventListener('resize', onWindowResize, false)
 function onWindowResize() {
@@ -33,6 +44,7 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight)
     render()
 }
+
 
 // var animate = function () {
 //     requestAnimationFrame(animate)
